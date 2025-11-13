@@ -1,0 +1,35 @@
+# Rust
+rust-backend/target/
+rust-backend/data/*.db
+rust-backend/backend.log
+
+# Python
+python-inference/__pycache__/
+python-inference/.venv/
+python-inference/*.pyc
+python-inference/.pytest_cache/
+python-training/__pycache__/
+python-training/.venv/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Environment files
+.env
+*.env.local
+**/.env
+**/chroma_db/
+**/lightning_store/
+
+# OS
+.DS_Store
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.iml
