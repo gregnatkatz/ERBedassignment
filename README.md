@@ -4,7 +4,8 @@
 
 ContosoHealth demonstrates the power of **Microsoft Agent Lightning** for building production-ready, multi-agent AI systems. This ER management system showcases how Agent Lightning enables continuous learning, multi-agent coordination, and RAG-enhanced decision making to deliver measurable improvements in healthcare operations.
 
-![Dashboard Overview](docs/screenshots/01-dashboard-overview.png)
+![Dashboard Overview](docs/screenshots/localhost_5173_170143.png)
+*Real-time dashboard showing 16-bed grid, AI agent network, scrolling alerts, and performance metrics*
 
 ---
 
@@ -14,9 +15,9 @@ ContosoHealth demonstrates the power of **Microsoft Agent Lightning** for buildi
 
 ### How Agent Lightning Powers ContosoHealth
 
-#### 1. **Offline Training with Real Clinical Data**
+#### 1. **Offline Training with Synthetic Data (No PII)**
 
-Agent Lightning collects **execution traces** from every patient interaction:
+Agent Lightning collects **execution traces** from every patient interaction using **synthetic data only** (no real patient information):
 - **Prompts**: What context was provided to each agent
 - **Tool Calls**: What actions agents took (bed assignments, resource orders, etc.)
 - **Rewards**: Clinical outcomes (door-to-provider time, patient satisfaction, etc.)
@@ -43,7 +44,7 @@ trainer.train_with_rl(
 )
 ```
 
-**Result**: Agents learn from every patient and get smarter over time, adapting to your hospital's specific patterns.
+**Result**: Agents learn from synthetic patient data and get smarter over time, adapting to hospital-specific patterns. **All training data is synthetic - no real patient information (PII) is used.**
 
 #### 2. **Multi-Agent Coordination with APO**
 
@@ -376,3 +377,36 @@ Built with **Microsoft Agent Lightning** - the framework that makes production A
 **Questions?** Open an issue or reach out to the maintainers.
 
 **Want to contribute?** PRs welcome! See CONTRIBUTING.md for guidelines.
+
+---
+
+## 📸 Screenshots
+
+### Dashboard Overview
+![Dashboard with Active Agents](docs/screenshots/localhost_5173_170143.png)
+*Complete dashboard showing all 7 AI agents active with confidence scores, 16-bed grid color-coded by ESI level, and real-time alerts feed*
+
+### Request Bed Workflow
+![Request Bed Modal](docs/screenshots/localhost_5173_163213.png)
+*Request Bed modal for AI-powered bed assignment with patient name, ESI level, and chief complaint fields*
+
+![Bed Assignment Success](docs/screenshots/localhost_5173_170150.png)
+*Success alert showing bed assignment with patient name appearing on the bed grid*
+
+### Metrics Panel
+![Performance Metrics](docs/screenshots/02-metrics-panel.png)
+*Real-time performance metrics: door-to-provider time, LWBS rate, bed utilization, patient satisfaction*
+
+### Agent Network Visualization
+![Agent Network](docs/screenshots/localhost_5173_165648.png)
+*7 AI agents with confidence scores: Coordinator (95%), Triage (92%), Resource Prediction (88%), Bed Assignment (90%), Staffing (85%), Wait Time (87%), Clinical Deterioration (91%)*
+
+### Bed Grid with ESI Color Coding
+![Bed Grid](docs/screenshots/localhost_5173_164950.png)
+*16-bed grid color-coded by Emergency Severity Index (ESI): Red (ESI-1), Orange (ESI-2), Yellow (ESI-3), Green (ESI-4), Blue (ESI-5)*
+
+### Scrolling Alerts Feed
+![Alerts Feed](docs/screenshots/localhost_5173_165640.png)
+*Auto-updating alerts feed showing AI recommendations from all agents with timestamps and confidence scores*
+
+---
